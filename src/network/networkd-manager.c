@@ -598,6 +598,7 @@ int manager_new(Manager **ret, bool test_mode) {
                 .manage_foreign_rules = true,
                 .manage_foreign_nexthops = true,
                 .ethtool_fd = -EBADF,
+                .static_addresses_per_network_max = STATIC_ADDRESSES_PER_NETWORK_MAX_DEFAULT,
                 .persistent_storage_fd = persistent_storage_open(),
                 .dhcp_use_domains = _USE_DOMAINS_INVALID,
                 .dhcp6_use_domains = _USE_DOMAINS_INVALID,

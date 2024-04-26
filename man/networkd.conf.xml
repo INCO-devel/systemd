@@ -172,6 +172,14 @@
           <xi:include href="version-info.xml" xpointer="v256"/>
         </listitem>
       </varlistentry>
+
+      <varlistentry>
+        <term><varname>StaticAddressesPerNetworkMax=</varname></term>
+        <listitem><para>Specifies the maximum amount of static addresses that can be specified in the configuration of an interface.
+        Defaults to 1024.</para>
+
+        <xi:include href="version-info.xml" xpointer="vTBD"/></listitem>
+      </varlistentry>
     </variablelist>
   </refsect1>
 

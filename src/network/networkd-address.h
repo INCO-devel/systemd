@@ -15,6 +15,8 @@
 #include "networkd-util.h"
 #include "time-util.h"
 
+#define STATIC_ADDRESSES_PER_NETWORK_MAX_DEFAULT 1024U
+
 typedef struct Address Address;
 typedef struct Manager Manager;
 typedef struct Network Network;

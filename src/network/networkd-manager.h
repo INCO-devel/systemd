@@ -35,6 +35,8 @@ struct Manager {
         KeepConfiguration keep_configuration;
         IPv6PrivacyExtensions ipv6_privacy_extensions;
 
+        uint64_t static_addresses_per_network_max;
+
         bool test_mode;
         bool enumerating;
         bool dirty;

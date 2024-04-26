@@ -26,7 +26,6 @@
 #include "strxcpyx.h"
 
 #define ADDRESSES_PER_LINK_MAX 2048U
-#define STATIC_ADDRESSES_PER_NETWORK_MAX 1024U
 
 #define KNOWN_FLAGS                             \
         (IFA_F_SECONDARY |                      \
@@ -187,6 +186,7 @@ int address_new_static(Network *network, const char *filename, unsigned section_
         int r;
 
         assert(network);
+        assert(network->manager);
         assert(ret);
         assert(filename);
         assert(section_line > 0);
@@ -201,7 +201,7 @@ int address_new_static(Network *network, const char *filename, unsigned section_
                 return 0;
         }
 
-        if (ordered_hashmap_size(network->addresses_by_section) >= STATIC_ADDRESSES_PER_NETWORK_MAX)
+        if (ordered_hashmap_size(network->addresses_by_section) >= network->manager->static_addresses_per_network_max)
                 return -E2BIG;
 
         r = address_new(&address);
